@@ -22,7 +22,7 @@ struct SearchBarView: View {
     var body: some View {
         HStack(spacing: 2) {
             TextField("Search a city", text: $searchText)
-
+            
             Button {
                 if searchText.isEmpty {
                     showAlert = true
@@ -37,7 +37,7 @@ struct SearchBarView: View {
         .padding(.vertical, 7)
         .background {
             RoundedRectangle(cornerRadius: 10)
-                .fill(.secondary.opacity(0.4))
+                .fill(.secondary.opacity(0.3))
         }
         .padding()
         .alert("The field should not be empty", isPresented: $showAlert) {

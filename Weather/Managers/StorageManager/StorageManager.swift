@@ -22,6 +22,10 @@ final class StorageManager: IStorageManager {
     // MARK: - Public Methods
     
     func saveSearchHistoryItem(_ item: SearchHistoryItem) {
+        guard !item.searchText.isEmpty else {
+            return
+        }
+      
         let existingItem = realm.objects(RSearchHistoryItem.self)
             .filter("searchText == %@", item.searchText)
             .first

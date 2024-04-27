@@ -34,6 +34,7 @@ final class SearchViewModel: ObservableObject {
     {
         storageManager.deleteHistoryItem(at: index)
     }
+    
     // MARK: - Private Methods
 
     private func loadSearchHistory() {

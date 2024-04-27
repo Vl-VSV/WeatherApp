@@ -43,16 +43,9 @@ struct HomeView: View {
                     .padding()
                     .multilineTextAlignment(.center)
                     
-                    if !(forecast.filter { $0.timeInterval.isSameDay(with: .now) }).isEmpty {
-                        ForecastView(
-                            title: "Today",
-                            forecast: forecast.filter { $0.timeInterval.isSameDay(with: .now) }
-                        )
+                    ForEach(Array(forecast.keys).sorted(), id: \.self) { date in
+                        ForecastView(title: date.getStringTitle(), forecast: forecast[date] ?? [])
                     }
-                    ForecastView(
-                        title: "Tomorrow",
-                        forecast: forecast.filter { $0.timeInterval.isSameDay(with: .tommorow) }
-                    )
                 }
             }
             .toolbar {

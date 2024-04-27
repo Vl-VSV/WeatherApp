@@ -13,7 +13,7 @@ final class HomeViewModel: ObservableObject {
     // MARK: - Published Properties
     
     @Published var weather: WeatherModel?
-    @Published var forecast: [WeatherModel]?
+    @Published var forecast: [Date: [WeatherModel]]?
     @Published var isLoading: Bool = true
     
     // MARK: - Private Properties
@@ -64,7 +64,7 @@ final class HomeViewModel: ObservableObject {
             )
             
             self.weather = try await weather
-            self.forecast = try await forecast
+            self.forecast = try await convertForecastToDictionary(forecast: forecast)
             
             isLoading = false
         } catch {
@@ -86,12 +86,34 @@ final class HomeViewModel: ObservableObject {
             )
             
             self.weather = try await weather
-            self.forecast = try await forecast
+            self.forecast = try await convertForecastToDictionary(forecast: forecast)
             
             isLoading = false
         } catch {
             assertionFailure(error.localizedDescription)
         }
+    }
+    
+    // MARK: - Private Methods
+    func convertForecastToDictionary(forecast: [WeatherModel]) -> [Date: [WeatherModel]] {
+        var forecastDictionary: [Date: [WeatherModel]] = [:]
+        let calendar = Calendar.current
+
+        for weatherModel in forecast {
+            let date = Date(timeIntervalSince1970: weatherModel.timeInterval)
+            let components = calendar.dateComponents([.year, .month, .day], from: date)
+
+            if let dateWithoutTime = calendar.date(from: components) {
+                if var weatherModels = forecastDictionary[dateWithoutTime] {
+                    weatherModels.append(weatherModel)
+                    forecastDictionary[dateWithoutTime] = weatherModels
+                } else {
+                    forecastDictionary[dateWithoutTime] = [weatherModel]
+                }
+            }
+        }
+
+        return forecastDictionary
     }
 }
 

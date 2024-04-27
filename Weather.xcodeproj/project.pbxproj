@@ -27,8 +27,6 @@
 		A4B73DEF2BDD44BD00A621FC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B73DEE2BDD44BD00A621FC /* HomeViewModel.swift */; };
 		A4B73DF22BDD4AD500A621FC /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B73DF12BDD4AD500A621FC /* ForecastView.swift */; };
 		A4B73DF62BDD4B0A00A621FC /* TimeInterval+toTimeString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B73DF52BDD4B0A00A621FC /* TimeInterval+toTimeString.swift */; };
-		A4B73DF82BDD4B7800A621FC /* TimeInterval+isSameDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B73DF72BDD4B7800A621FC /* TimeInterval+isSameDay.swift */; };
-		A4B73DFB2BDD4BA000A621FC /* Date+tommorow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B73DFA2BDD4BA000A621FC /* Date+tommorow.swift */; };
 		A4B73DFE2BDD4BEF00A621FC /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B73DFD2BDD4BEF00A621FC /* SearchView.swift */; };
 		A4B73E002BDD4C1A00A621FC /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B73DFF2BDD4C1A00A621FC /* SearchBarView.swift */; };
 		A4B73E172BDD68EC00A621FC /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = A4B73E162BDD68EC00A621FC /* Localizable.xcstrings */; };
@@ -39,6 +37,7 @@
 		A4B73E2B2BDD750400A621FC /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B73E2A2BDD750400A621FC /* StorageManager.swift */; };
 		A4B73E302BDD75BE00A621FC /* SearchHistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B73E2F2BDD75BE00A621FC /* SearchHistoryItem.swift */; };
 		A4B73E322BDD76AD00A621FC /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B73E312BDD76AD00A621FC /* SearchViewModel.swift */; };
+		A4B73E342BDD7F5500A621FC /* Date+getStringTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B73E332BDD7F5500A621FC /* Date+getStringTitle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,8 +62,6 @@
 		A4B73DEE2BDD44BD00A621FC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		A4B73DF12BDD4AD500A621FC /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
 		A4B73DF52BDD4B0A00A621FC /* TimeInterval+toTimeString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+toTimeString.swift"; sourceTree = "<group>"; };
-		A4B73DF72BDD4B7800A621FC /* TimeInterval+isSameDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+isSameDay.swift"; sourceTree = "<group>"; };
-		A4B73DFA2BDD4BA000A621FC /* Date+tommorow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+tommorow.swift"; sourceTree = "<group>"; };
 		A4B73DFD2BDD4BEF00A621FC /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		A4B73DFF2BDD4C1A00A621FC /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		A4B73E162BDD68EC00A621FC /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
@@ -73,6 +70,7 @@
 		A4B73E2A2BDD750400A621FC /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		A4B73E2F2BDD75BE00A621FC /* SearchHistoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryItem.swift; sourceTree = "<group>"; };
 		A4B73E312BDD76AD00A621FC /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		A4B73E332BDD7F5500A621FC /* Date+getStringTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+getStringTitle.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,7 +260,6 @@
 			isa = PBXGroup;
 			children = (
 				A4B73DF52BDD4B0A00A621FC /* TimeInterval+toTimeString.swift */,
-				A4B73DF72BDD4B7800A621FC /* TimeInterval+isSameDay.swift */,
 			);
 			path = TimeInterval;
 			sourceTree = "<group>";
@@ -270,7 +267,7 @@
 		A4B73DF92BDD4B9800A621FC /* Date */ = {
 			isa = PBXGroup;
 			children = (
-				A4B73DFA2BDD4BA000A621FC /* Date+tommorow.swift */,
+				A4B73E332BDD7F5500A621FC /* Date+getStringTitle.swift */,
 			);
 			path = Date;
 			sourceTree = "<group>";
@@ -392,7 +389,6 @@
 				A4B73DCC2BDD33DD00A621FC /* ConnectionType.swift in Sources */,
 				A4B73DCE2BDD33EE00A621FC /* NetworkMonitor.swift in Sources */,
 				A4B73DE62BDD370C00A621FC /* ForecastResponse.swift in Sources */,
-				A4B73DFB2BDD4BA000A621FC /* Date+tommorow.swift in Sources */,
 				A4B73E002BDD4C1A00A621FC /* SearchBarView.swift in Sources */,
 				A4B73DF22BDD4AD500A621FC /* ForecastView.swift in Sources */,
 				A4B73DED2BDD3E4400A621FC /* LocationManager.swift in Sources */,
@@ -405,6 +401,7 @@
 				A4B73DD22BDD345800A621FC /* RequestBuilder.swift in Sources */,
 				A4B73DD62BDD348A00A621FC /* INetworkRequest.swift in Sources */,
 				A4B73E1A2BDD692000A621FC /* LocalizationManager.swift in Sources */,
+				A4B73E342BDD7F5500A621FC /* Date+getStringTitle.swift in Sources */,
 				A4B73DC52BDD329900A621FC /* HomeView.swift in Sources */,
 				A4B73DDA2BDD362900A621FC /* WeatherManager.swift in Sources */,
 				A4B73E1C2BDD693800A621FC /* Languages.swift in Sources */,
@@ -412,7 +409,6 @@
 				A4B73E322BDD76AD00A621FC /* SearchViewModel.swift in Sources */,
 				A4B73DE82BDD373000A621FC /* Constants.swift in Sources */,
 				A4B73DE02BDD36D100A621FC /* WeatherRequest.swift in Sources */,
-				A4B73DF82BDD4B7800A621FC /* TimeInterval+isSameDay.swift in Sources */,
 				A4B73DD42BDD347500A621FC /* NetworkService.swift in Sources */,
 				A4B73E2B2BDD750400A621FC /* StorageManager.swift in Sources */,
 			);

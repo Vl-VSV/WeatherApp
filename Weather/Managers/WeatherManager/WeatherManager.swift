@@ -9,11 +9,20 @@ import Foundation
 import CoreLocation
 
 protocol IWeatherManager {
-    func getWeatherIn(latitude: CLLocationDegrees, longitude: CLLocationDegrees) async throws -> WeatherModel
-    func getWeatherIn(city: String) async throws -> WeatherModel
+    func getWeatherIn(
+        latitude: CLLocationDegrees,
+        longitude: CLLocationDegrees,
+        lang: Languages
+    ) async throws -> WeatherModel
 
-    func getForecastIn(latitude: CLLocationDegrees, longitude: CLLocationDegrees) async throws -> [WeatherModel]
-    func getForecastIn(city: String) async throws -> [WeatherModel]
+    func getForecastIn(
+        latitude: CLLocationDegrees,
+        longitude: CLLocationDegrees,
+        lang: Languages
+    ) async throws -> [WeatherModel]
+
+    func getWeatherIn(city: String, lang: Languages) async throws -> WeatherModel
+    func getForecastIn(city: String, lang: Languages) async throws -> [WeatherModel]
 }
 
 final class WeatherManager: IWeatherManager {
@@ -27,24 +36,32 @@ final class WeatherManager: IWeatherManager {
 
     // MARK: - Public Methods
 
-    func getWeatherIn(latitude: CLLocationDegrees, longitude: CLLocationDegrees) async throws -> WeatherModel {
-        let weatherRequest = WeatherRequest(latitude: latitude, longitude: longitude)
+    func getWeatherIn(
+        latitude: CLLocationDegrees,
+        longitude: CLLocationDegrees,
+        lang: Languages
+    ) async throws -> WeatherModel {
+        let weatherRequest = WeatherRequest(latitude: latitude, longitude: longitude, lang: lang.rawValue)
 
         let weatherResponse: WeatherResponse = try await networkService.perform(weatherRequest)
 
         return createWeatherModel(from: weatherResponse)
     }
 
-    func getWeatherIn(city: String) async throws -> WeatherModel {
-        let weatherRequest = WeatherRequest(city: city)
+    func getWeatherIn(city: String, lang: Languages) async throws -> WeatherModel {
+        let weatherRequest = WeatherRequest(city: city, lang: lang.rawValue)
 
         let weatherResponse: WeatherResponse = try await networkService.perform(weatherRequest)
 
         return createWeatherModel(from: weatherResponse)
     }
 
-    func getForecastIn(latitude: CLLocationDegrees, longitude: CLLocationDegrees) async throws -> [WeatherModel] {
-        let forecastRequest = ForecastRequest(latitude: latitude, longitude: longitude)
+    func getForecastIn(
+        latitude: CLLocationDegrees,
+        longitude: CLLocationDegrees,
+        lang: Languages
+    ) async throws -> [WeatherModel] {
+        let forecastRequest = ForecastRequest(latitude: latitude, longitude: longitude, lang: lang.rawValue)
 
         let forecastResponse: ForecastResponse = try await networkService.perform(forecastRequest)
         let cityName = forecastResponse.city.name
@@ -52,8 +69,8 @@ final class WeatherManager: IWeatherManager {
         return createWeatherModels(from: forecastResponse, cityName: cityName)
     }
 
-    func getForecastIn(city: String) async throws -> [WeatherModel] {
-        let forecastRequest = ForecastRequest(city: city)
+    func getForecastIn(city: String, lang: Languages) async throws -> [WeatherModel] {
+        let forecastRequest = ForecastRequest(city: city, lang: lang.rawValue)
 
         let forecastResponse: ForecastResponse = try await networkService.perform(forecastRequest)
         let cityName = forecastResponse.city.name
@@ -85,4 +102,3 @@ final class WeatherManager: IWeatherManager {
         }
     }
 }
-

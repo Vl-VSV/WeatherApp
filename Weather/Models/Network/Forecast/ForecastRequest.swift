@@ -16,20 +16,22 @@ struct ForecastRequest: INetworkRequest {
 
     // MARK: - Init
 
-    init(latitude: Double, longitude: Double, apiKey: String = Constants.apiToken) {
+    init(latitude: Double, longitude: Double, lang: String = "en", apiKey: String = Constants.apiToken) {
         let queryParams: [String: Any] = [
             "lat": latitude,
             "lon": longitude,
             "units": "metric",
+            "lang": lang,
             "appid": apiKey
         ]
         self.parameters = .url(queryParams)
     }
 
-    init(city: String, apiKey: String = Constants.apiToken) {
+    init(city: String, lang: String = "en", apiKey: String = Constants.apiToken) {
         let queryParams: [String: Any] = [
             "q": city,
             "units": "metric",
+            "lang": lang,
             "appid": apiKey
         ]
         self.parameters = .url(queryParams)

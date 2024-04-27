@@ -54,11 +54,13 @@ final class HomeViewModel: ObservableObject {
         do {
             async let weather = weatherManager.getWeatherIn(
                 latitude: latitude,
-                longitude: longitude
+                longitude: longitude,
+                lang: LocalizationManager.preferredLanguage()
             )
             async let forecast = weatherManager.getForecastIn(
                 latitude: latitude,
-                longitude: longitude
+                longitude: longitude,
+                lang: LocalizationManager.preferredLanguage()
             )
             
             self.weather = try await weather
@@ -74,8 +76,14 @@ final class HomeViewModel: ObservableObject {
         isLoading = true
         
         do {
-            async let weather = weatherManager.getWeatherIn(city: city)
-            async let forecast = weatherManager.getForecastIn(city: city)
+            async let weather = weatherManager.getWeatherIn(
+                city: city,
+                lang: LocalizationManager.preferredLanguage()
+            )
+            async let forecast = weatherManager.getForecastIn(
+                city: city,
+                lang: LocalizationManager.preferredLanguage()
+            )
             
             self.weather = try await weather
             self.forecast = try await forecast

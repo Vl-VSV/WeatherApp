@@ -33,6 +33,28 @@
           }
         }
       }
+    },
+    "Today" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сегодня"
+          }
+        }
+      }
+    },
+    "Tomorrow" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Завтра"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

@@ -33,6 +33,7 @@
 		A4B73E322BDD76AD00A621FC /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B73E312BDD76AD00A621FC /* SearchViewModel.swift */; };
 		A4B73E342BDD7F5500A621FC /* Date+getStringTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B73E332BDD7F5500A621FC /* Date+getStringTitle.swift */; };
 		A4B73E382BDD856000A621FC /* NetworkService in Frameworks */ = {isa = PBXBuildFile; productRef = A4B73E372BDD856000A621FC /* NetworkService */; };
+		A4B73E3C2BDD923200A621FC /* String+localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B73E3B2BDD923200A621FC /* String+localized.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,8 @@
 		A4B73E312BDD76AD00A621FC /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		A4B73E332BDD7F5500A621FC /* Date+getStringTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+getStringTitle.swift"; sourceTree = "<group>"; };
 		A4B73E352BDD848A00A621FC /* NetworkService */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NetworkService; sourceTree = "<group>"; };
+		A4B73E392BDD90F100A621FC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A4B73E3B2BDD923200A621FC /* String+localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+localized.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +83,7 @@
 		A4B73DA72BDD31BC00A621FC = {
 			isa = PBXGroup;
 			children = (
+				A4B73E392BDD90F100A621FC /* README.md */,
 				A4B73DB22BDD31BC00A621FC /* Weather */,
 				A4B73E352BDD848A00A621FC /* NetworkService */,
 				A4B73DB12BDD31BC00A621FC /* Products */,
@@ -213,6 +217,7 @@
 		A4B73DF32BDD4AE900A621FC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A4B73E3A2BDD921B00A621FC /* String */,
 				A4B73DF92BDD4B9800A621FC /* Date */,
 				A4B73DF42BDD4AFB00A621FC /* TimeInterval */,
 			);
@@ -274,6 +279,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A4B73E3A2BDD921B00A621FC /* String */ = {
+			isa = PBXGroup;
+			children = (
+				A4B73E3B2BDD923200A621FC /* String+localized.swift */,
+			);
+			path = String;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,6 +370,7 @@
 			files = (
 				A4B73DEF2BDD44BD00A621FC /* HomeViewModel.swift in Sources */,
 				A4B73DE42BDD370000A621FC /* ForecastRequest.swift in Sources */,
+				A4B73E3C2BDD923200A621FC /* String+localized.swift in Sources */,
 				A4B73DE62BDD370C00A621FC /* ForecastResponse.swift in Sources */,
 				A4B73E002BDD4C1A00A621FC /* SearchBarView.swift in Sources */,
 				A4B73DF22BDD4AD500A621FC /* ForecastView.swift in Sources */,

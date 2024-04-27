@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import NetworkService
 
 @main
 struct WeatherApp: App {

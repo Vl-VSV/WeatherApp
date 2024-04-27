@@ -7,20 +7,20 @@
 
 import Foundation
 
-protocol INetworkRequest {
+public protocol INetworkRequest {
     var path: String { get }
     var method: HTTPMethod { get }
     var parameters: Parameters { get }
 }
 
-enum HTTPMethod: String {
+public enum HTTPMethod: String {
     case get = "GET"
     case post = "POST"
     case put = "PUT"
     case delete = "DELETE"
 }
 
-enum Parameters {
+public enum Parameters {
     case none
     case url([String: Any])
 }

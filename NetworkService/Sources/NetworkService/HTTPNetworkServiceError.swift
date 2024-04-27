@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum HTTPNetworkServiceError: Error {
+public enum HTTPNetworkServiceError: Error {
     case noNetwork
     case noData
     case failedToDecodeResponse(Error)

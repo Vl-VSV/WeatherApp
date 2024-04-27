@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreLocation
+import NetworkService
 
 protocol IWeatherManager {
     func getWeatherIn(

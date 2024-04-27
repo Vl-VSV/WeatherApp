@@ -8,7 +8,7 @@
 import Foundation
 import Network
 
-protocol INetworkMonitor {
+public protocol INetworkMonitor {
     var isConnected: Bool { get }
     var connectionType: ConnectionType { get }
 
@@ -16,7 +16,7 @@ protocol INetworkMonitor {
     func stop()
 }
 
-final class NetworkMonitor: INetworkMonitor {
+public final class NetworkMonitor: INetworkMonitor {
     // MARK: - Properties
 
     public static let shared = NetworkMonitor()
@@ -24,8 +24,8 @@ final class NetworkMonitor: INetworkMonitor {
     private let monitor: NWPathMonitor
     private let queue = DispatchQueue.global()
 
-    private(set) var isConnected: Bool
-    private(set) var connectionType: ConnectionType
+    public private(set) var isConnected: Bool
+    public private(set) var connectionType: ConnectionType
 
     // MARK: - Private Init
 
@@ -37,7 +37,7 @@ final class NetworkMonitor: INetworkMonitor {
 
     // MARK: - Public Methods
 
-    func start() {
+    public func start() {
         monitor.start(queue: queue)
         monitor.pathUpdateHandler = { [weak self] path in
             self?.isConnected = path.status != .unsatisfied
@@ -45,7 +45,7 @@ final class NetworkMonitor: INetworkMonitor {
         }
     }
 
-    func stop() {
+    public func stop() {
         monitor.cancel()
     }
 }

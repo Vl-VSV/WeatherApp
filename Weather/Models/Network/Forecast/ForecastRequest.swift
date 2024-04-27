@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import NetworkService
 
 struct ForecastRequest: INetworkRequest {
     // MARK: - Properties

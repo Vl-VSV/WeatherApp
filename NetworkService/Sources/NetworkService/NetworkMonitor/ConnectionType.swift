@@ -8,7 +8,7 @@
 import Foundation
 import Network
 
-enum ConnectionType {
+public enum ConnectionType {
     case wifi
     case cellular
     case ethernet

@@ -7,15 +7,15 @@
 
 import Foundation
 
-struct RequestBuilder {
+public struct RequestBuilder {
     // MARK: - Properties
 
-    var baseUrl: URL
-    var token: String?
+    private(set) var baseUrl: URL
+    private(set) var token: String?
 
     // MARK: - Init
 
-    init(baseUrl: URL, token: String? = nil) {
+    public init(baseUrl: URL, token: String? = nil) {
         self.token = token
 
         self.baseUrl = baseUrl

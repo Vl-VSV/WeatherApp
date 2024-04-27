@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol INetworkService {
+public protocol INetworkService {
     func perform<T: Codable>(_ request: INetworkRequest) async throws -> T
 }
 
-final class NetworkService: INetworkService {
+public final class NetworkService: INetworkService {
     // MARK: - Properties
 
     private let session: URLSession
@@ -21,7 +21,7 @@ final class NetworkService: INetworkService {
 
     // MARK: - Init
 
-    init(
+    public init(
         session: URLSession,
         networkMonitor: INetworkMonitor,
         requestBuilder: RequestBuilder,
@@ -35,7 +35,7 @@ final class NetworkService: INetworkService {
 
     // MARK: - Public Methods
 
-    func perform<T: Codable>(_ request: INetworkRequest) async throws -> T {
+    public func perform<T: Codable>(_ request: INetworkRequest) async throws -> T {
         guard networkMonitor.isConnected else {
             throw HTTPNetworkServiceError.noNetwork
         }

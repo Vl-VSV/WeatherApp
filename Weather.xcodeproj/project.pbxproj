@@ -25,6 +25,12 @@
 		A4B73DEA2BDD379200A621FC /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B73DE92BDD379200A621FC /* WeatherModel.swift */; };
 		A4B73DED2BDD3E4400A621FC /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B73DEC2BDD3E4400A621FC /* LocationManager.swift */; };
 		A4B73DEF2BDD44BD00A621FC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B73DEE2BDD44BD00A621FC /* HomeViewModel.swift */; };
+		A4B73DF22BDD4AD500A621FC /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B73DF12BDD4AD500A621FC /* ForecastView.swift */; };
+		A4B73DF62BDD4B0A00A621FC /* TimeInterval+toTimeString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B73DF52BDD4B0A00A621FC /* TimeInterval+toTimeString.swift */; };
+		A4B73DF82BDD4B7800A621FC /* TimeInterval+isSameDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B73DF72BDD4B7800A621FC /* TimeInterval+isSameDay.swift */; };
+		A4B73DFB2BDD4BA000A621FC /* Date+tommorow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B73DFA2BDD4BA000A621FC /* Date+tommorow.swift */; };
+		A4B73DFE2BDD4BEF00A621FC /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B73DFD2BDD4BEF00A621FC /* SearchView.swift */; };
+		A4B73E002BDD4C1A00A621FC /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B73DFF2BDD4C1A00A621FC /* SearchBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +53,12 @@
 		A4B73DE92BDD379200A621FC /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		A4B73DEC2BDD3E4400A621FC /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		A4B73DEE2BDD44BD00A621FC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		A4B73DF12BDD4AD500A621FC /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
+		A4B73DF52BDD4B0A00A621FC /* TimeInterval+toTimeString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+toTimeString.swift"; sourceTree = "<group>"; };
+		A4B73DF72BDD4B7800A621FC /* TimeInterval+isSameDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+isSameDay.swift"; sourceTree = "<group>"; };
+		A4B73DFA2BDD4BA000A621FC /* Date+tommorow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+tommorow.swift"; sourceTree = "<group>"; };
+		A4B73DFD2BDD4BEF00A621FC /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		A4B73DFF2BDD4C1A00A621FC /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +93,12 @@
 			children = (
 				A4B73DB32BDD31BC00A621FC /* WeatherApp.swift */,
 				A4B73DC12BDD322000A621FC /* Resources */,
+				A4B73DF32BDD4AE900A621FC /* Extensions */,
 				A4B73DC22BDD325500A621FC /* Screens */,
 				A4B73DDB2BDD368200A621FC /* Models */,
 				A4B73DC82BDD32F200A621FC /* Services */,
 				A4B73DC62BDD32B400A621FC /* Managers */,
+				A4B73DF02BDD4AAB00A621FC /* UIComponents */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -101,6 +115,7 @@
 		A4B73DC22BDD325500A621FC /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				A4B73DFC2BDD4BE300A621FC /* SearchView */,
 				A4B73DC32BDD327B00A621FC /* HomeView */,
 			);
 			path = Screens;
@@ -205,6 +220,49 @@
 			path = LocationManager;
 			sourceTree = "<group>";
 		};
+		A4B73DF02BDD4AAB00A621FC /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				A4B73DF12BDD4AD500A621FC /* ForecastView.swift */,
+				A4B73DFF2BDD4C1A00A621FC /* SearchBarView.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		A4B73DF32BDD4AE900A621FC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A4B73DF92BDD4B9800A621FC /* Date */,
+				A4B73DF42BDD4AFB00A621FC /* TimeInterval */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A4B73DF42BDD4AFB00A621FC /* TimeInterval */ = {
+			isa = PBXGroup;
+			children = (
+				A4B73DF52BDD4B0A00A621FC /* TimeInterval+toTimeString.swift */,
+				A4B73DF72BDD4B7800A621FC /* TimeInterval+isSameDay.swift */,
+			);
+			path = TimeInterval;
+			sourceTree = "<group>";
+		};
+		A4B73DF92BDD4B9800A621FC /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				A4B73DFA2BDD4BA000A621FC /* Date+tommorow.swift */,
+			);
+			path = Date;
+			sourceTree = "<group>";
+		};
+		A4B73DFC2BDD4BE300A621FC /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				A4B73DFD2BDD4BEF00A621FC /* SearchView.swift */,
+			);
+			path = SearchView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -279,8 +337,13 @@
 				A4B73DCC2BDD33DD00A621FC /* ConnectionType.swift in Sources */,
 				A4B73DCE2BDD33EE00A621FC /* NetworkMonitor.swift in Sources */,
 				A4B73DE62BDD370C00A621FC /* ForecastResponse.swift in Sources */,
+				A4B73DFB2BDD4BA000A621FC /* Date+tommorow.swift in Sources */,
+				A4B73E002BDD4C1A00A621FC /* SearchBarView.swift in Sources */,
+				A4B73DF22BDD4AD500A621FC /* ForecastView.swift in Sources */,
 				A4B73DED2BDD3E4400A621FC /* LocationManager.swift in Sources */,
+				A4B73DF62BDD4B0A00A621FC /* TimeInterval+toTimeString.swift in Sources */,
 				A4B73DEA2BDD379200A621FC /* WeatherModel.swift in Sources */,
+				A4B73DFE2BDD4BEF00A621FC /* SearchView.swift in Sources */,
 				A4B73DB42BDD31BC00A621FC /* WeatherApp.swift in Sources */,
 				A4B73DE22BDD36E300A621FC /* WeatherResponse.swift in Sources */,
 				A4B73DD22BDD345800A621FC /* RequestBuilder.swift in Sources */,
@@ -290,6 +353,7 @@
 				A4B73DD02BDD340E00A621FC /* HTTPNetworkServiceError.swift in Sources */,
 				A4B73DE82BDD373000A621FC /* Constants.swift in Sources */,
 				A4B73DE02BDD36D100A621FC /* WeatherRequest.swift in Sources */,
+				A4B73DF82BDD4B7800A621FC /* TimeInterval+isSameDay.swift in Sources */,
 				A4B73DD42BDD347500A621FC /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

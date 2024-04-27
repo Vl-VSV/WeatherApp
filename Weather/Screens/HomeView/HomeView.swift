@@ -22,7 +22,7 @@ struct HomeView: View {
             ScrollView(showsIndicators: false) {
                 if viewModel.isLoading {
                     ProgressView()
-                } else if let weather = viewModel.weather {
+                } else if let weather = viewModel.weather, let forecast = viewModel.forecast {
                     VStack {
                         Text(weather.cityName)
                             .font(.largeTitle)
@@ -42,6 +42,17 @@ struct HomeView: View {
                     }
                     .padding()
                     .multilineTextAlignment(.center)
+                    
+                    if !(forecast.filter { $0.timeInterval.isSameDay(with: .now) }).isEmpty {
+                        ForecastView(
+                            title: "Today",
+                            forecast: forecast.filter { $0.timeInterval.isSameDay(with: .now) }
+                        )
+                    }
+                    ForecastView(
+                        title: "Tomorrow",
+                        forecast: forecast.filter { $0.timeInterval.isSameDay(with: .tommorow) }
+                    )
                 }
             }
             .toolbar {
@@ -54,6 +65,14 @@ struct HomeView: View {
                 }
             }
             .animation(.easeIn, value: viewModel.isLoading)
+            .sheet(isPresented: $showSearchView) {
+                SearchView(searchText: $searchText) {
+                    Task {
+                        await viewModel.showWeatherIn(city: searchText)
+                        showSearchView.toggle()
+                    }
+                }
+            }
         }
     }
 }

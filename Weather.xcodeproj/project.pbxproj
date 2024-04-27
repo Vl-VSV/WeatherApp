@@ -23,6 +23,7 @@
 		A4B73DE62BDD370C00A621FC /* ForecastResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B73DE52BDD370B00A621FC /* ForecastResponse.swift */; };
 		A4B73DE82BDD373000A621FC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B73DE72BDD373000A621FC /* Constants.swift */; };
 		A4B73DEA2BDD379200A621FC /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B73DE92BDD379200A621FC /* WeatherModel.swift */; };
+		A4B73DED2BDD3E4400A621FC /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B73DEC2BDD3E4400A621FC /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		A4B73DE52BDD370B00A621FC /* ForecastResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastResponse.swift; sourceTree = "<group>"; };
 		A4B73DE72BDD373000A621FC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A4B73DE92BDD379200A621FC /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		A4B73DEC2BDD3E4400A621FC /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 		A4B73DC62BDD32B400A621FC /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				A4B73DEB2BDD3E3400A621FC /* LocationManager */,
 				A4B73DD72BDD360600A621FC /* WeatherManager */,
 			);
 			path = Managers;
@@ -191,6 +194,14 @@
 			path = Forecast;
 			sourceTree = "<group>";
 		};
+		A4B73DEB2BDD3E3400A621FC /* LocationManager */ = {
+			isa = PBXGroup;
+			children = (
+				A4B73DEC2BDD3E4400A621FC /* LocationManager.swift */,
+			);
+			path = LocationManager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -264,6 +275,7 @@
 				A4B73DCC2BDD33DD00A621FC /* ConnectionType.swift in Sources */,
 				A4B73DCE2BDD33EE00A621FC /* NetworkMonitor.swift in Sources */,
 				A4B73DE62BDD370C00A621FC /* ForecastResponse.swift in Sources */,
+				A4B73DED2BDD3E4400A621FC /* LocationManager.swift in Sources */,
 				A4B73DEA2BDD379200A621FC /* WeatherModel.swift in Sources */,
 				A4B73DB42BDD31BC00A621FC /* WeatherApp.swift in Sources */,
 				A4B73DE22BDD36E300A621FC /* WeatherResponse.swift in Sources */,
@@ -410,6 +422,7 @@
 				DEVELOPMENT_TEAM = UV4BPKP674;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -438,6 +451,7 @@
 				DEVELOPMENT_TEAM = UV4BPKP674;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

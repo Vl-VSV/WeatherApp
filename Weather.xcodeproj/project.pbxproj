@@ -24,6 +24,7 @@
 		A4B73DE82BDD373000A621FC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B73DE72BDD373000A621FC /* Constants.swift */; };
 		A4B73DEA2BDD379200A621FC /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B73DE92BDD379200A621FC /* WeatherModel.swift */; };
 		A4B73DED2BDD3E4400A621FC /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B73DEC2BDD3E4400A621FC /* LocationManager.swift */; };
+		A4B73DEF2BDD44BD00A621FC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B73DEE2BDD44BD00A621FC /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		A4B73DE72BDD373000A621FC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A4B73DE92BDD379200A621FC /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		A4B73DEC2BDD3E4400A621FC /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		A4B73DEE2BDD44BD00A621FC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				A4B73DC42BDD329900A621FC /* HomeView.swift */,
+				A4B73DEE2BDD44BD00A621FC /* HomeViewModel.swift */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4B73DEF2BDD44BD00A621FC /* HomeViewModel.swift in Sources */,
 				A4B73DE42BDD370000A621FC /* ForecastRequest.swift in Sources */,
 				A4B73DCC2BDD33DD00A621FC /* ConnectionType.swift in Sources */,
 				A4B73DCE2BDD33EE00A621FC /* NetworkMonitor.swift in Sources */,

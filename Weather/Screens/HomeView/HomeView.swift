@@ -8,10 +8,57 @@
 import SwiftUI
 
 struct HomeView: View {
+    // MARK: - Properties
+    
+    @ObservedObject private var viewModel = HomeViewModel()
+    
+    @State private var searchText: String = ""
+    @State private var showSearchView: Bool = false
+    
+    // MARK: - Body
+    
     var body: some View {
-        Text("Hello, World!")
+        NavigationView {
+            ScrollView(showsIndicators: false) {
+                if viewModel.isLoading {
+                    ProgressView()
+                } else if let weather = viewModel.weather {
+                    VStack {
+                        Text(weather.cityName)
+                            .font(.largeTitle)
+                        
+                        Text(weather.tempuratureString)
+                            .font(.system(size: 96))
+                            .fontWeight(.thin)
+                        
+                        Image(systemName: weather.iconSF)
+                            .font(.system(size: 48))
+                            .foregroundStyle(.secondary)
+                        
+                        Text(weather.description.capitalized)
+                            .font(.title3)
+                            .fontWeight(.semibold)
+                            .foregroundStyle(.secondary)
+                    }
+                    .padding()
+                    .multilineTextAlignment(.center)
+                }
+            }
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        showSearchView.toggle()
+                    } label: {
+                        Image(systemName: "magnifyingglass")
+                    }
+                }
+            }
+            .animation(.easeIn, value: viewModel.isLoading)
+        }
     }
 }
+
+// MARK: - Preview
 
 #Preview {
     HomeView()

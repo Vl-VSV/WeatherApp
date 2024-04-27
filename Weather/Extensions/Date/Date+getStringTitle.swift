@@ -19,9 +19,9 @@ extension Date {
         let dateString: String
         
         if calendar.isDate(self, inSameDayAs: now) {
-            dateString = "Today"
+            dateString = "Today".localized()
         } else if calendar.isDate(self, inSameDayAs: tomorrow) {
-            dateString = "Tomorrow"
+            dateString = "Tomorrow".localized()
         } else {
             dateString = dateFormatter.string(from: self)
         }

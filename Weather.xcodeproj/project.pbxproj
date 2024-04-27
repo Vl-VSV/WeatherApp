@@ -34,6 +34,11 @@
 		A4B73E172BDD68EC00A621FC /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = A4B73E162BDD68EC00A621FC /* Localizable.xcstrings */; };
 		A4B73E1A2BDD692000A621FC /* LocalizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B73E192BDD692000A621FC /* LocalizationManager.swift */; };
 		A4B73E1C2BDD693800A621FC /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B73E1B2BDD693800A621FC /* Languages.swift */; };
+		A4B73E262BDD718400A621FC /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = A4B73E252BDD718400A621FC /* Realm */; };
+		A4B73E282BDD718400A621FC /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A4B73E272BDD718400A621FC /* RealmSwift */; };
+		A4B73E2B2BDD750400A621FC /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B73E2A2BDD750400A621FC /* StorageManager.swift */; };
+		A4B73E302BDD75BE00A621FC /* SearchHistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B73E2F2BDD75BE00A621FC /* SearchHistoryItem.swift */; };
+		A4B73E322BDD76AD00A621FC /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B73E312BDD76AD00A621FC /* SearchViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +70,9 @@
 		A4B73E162BDD68EC00A621FC /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		A4B73E192BDD692000A621FC /* LocalizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationManager.swift; sourceTree = "<group>"; };
 		A4B73E1B2BDD693800A621FC /* Languages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
+		A4B73E2A2BDD750400A621FC /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		A4B73E2F2BDD75BE00A621FC /* SearchHistoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryItem.swift; sourceTree = "<group>"; };
+		A4B73E312BDD76AD00A621FC /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +80,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4B73E282BDD718400A621FC /* RealmSwift in Frameworks */,
+				A4B73E262BDD718400A621FC /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +150,7 @@
 		A4B73DC62BDD32B400A621FC /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				A4B73E292BDD74F700A621FC /* StorageManager */,
 				A4B73E182BDD691000A621FC /* LocalizationManager */,
 				A4B73DEB2BDD3E3400A621FC /* LocationManager */,
 				A4B73DD72BDD360600A621FC /* WeatherManager */,
@@ -198,6 +209,7 @@
 				A4B73DDE2BDD36C200A621FC /* Forecast */,
 				A4B73DDD2BDD36BC00A621FC /* Weather */,
 				A4B73DE92BDD379200A621FC /* WeatherModel.swift */,
+				A4B73E2F2BDD75BE00A621FC /* SearchHistoryItem.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -267,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				A4B73DFD2BDD4BEF00A621FC /* SearchView.swift */,
+				A4B73E312BDD76AD00A621FC /* SearchViewModel.swift */,
 			);
 			path = SearchView;
 			sourceTree = "<group>";
@@ -288,6 +301,14 @@
 			path = LocalizationManager;
 			sourceTree = "<group>";
 		};
+		A4B73E292BDD74F700A621FC /* StorageManager */ = {
+			isa = PBXGroup;
+			children = (
+				A4B73E2A2BDD750400A621FC /* StorageManager.swift */,
+			);
+			path = StorageManager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -304,6 +325,10 @@
 			dependencies = (
 			);
 			name = Weather;
+			packageProductDependencies = (
+				A4B73E252BDD718400A621FC /* Realm */,
+				A4B73E272BDD718400A621FC /* RealmSwift */,
+			);
 			productName = Weather;
 			productReference = A4B73DB02BDD31BC00A621FC /* Weather.app */;
 			productType = "com.apple.product-type.application";
@@ -333,6 +358,9 @@
 				ru,
 			);
 			mainGroup = A4B73DA72BDD31BC00A621FC;
+			packageReferences = (
+				A4B73E242BDD718400A621FC /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = A4B73DB12BDD31BC00A621FC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -371,6 +399,7 @@
 				A4B73DF62BDD4B0A00A621FC /* TimeInterval+toTimeString.swift in Sources */,
 				A4B73DEA2BDD379200A621FC /* WeatherModel.swift in Sources */,
 				A4B73DFE2BDD4BEF00A621FC /* SearchView.swift in Sources */,
+				A4B73E302BDD75BE00A621FC /* SearchHistoryItem.swift in Sources */,
 				A4B73DB42BDD31BC00A621FC /* WeatherApp.swift in Sources */,
 				A4B73DE22BDD36E300A621FC /* WeatherResponse.swift in Sources */,
 				A4B73DD22BDD345800A621FC /* RequestBuilder.swift in Sources */,
@@ -380,10 +409,12 @@
 				A4B73DDA2BDD362900A621FC /* WeatherManager.swift in Sources */,
 				A4B73E1C2BDD693800A621FC /* Languages.swift in Sources */,
 				A4B73DD02BDD340E00A621FC /* HTTPNetworkServiceError.swift in Sources */,
+				A4B73E322BDD76AD00A621FC /* SearchViewModel.swift in Sources */,
 				A4B73DE82BDD373000A621FC /* Constants.swift in Sources */,
 				A4B73DE02BDD36D100A621FC /* WeatherRequest.swift in Sources */,
 				A4B73DF82BDD4B7800A621FC /* TimeInterval+isSameDay.swift in Sources */,
 				A4B73DD42BDD347500A621FC /* NetworkService.swift in Sources */,
+				A4B73E2B2BDD750400A621FC /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,6 +620,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A4B73E242BDD718400A621FC /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A4B73E252BDD718400A621FC /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A4B73E242BDD718400A621FC /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		A4B73E272BDD718400A621FC /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A4B73E242BDD718400A621FC /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A4B73DA82BDD31BC00A621FC /* Project object */;
 }

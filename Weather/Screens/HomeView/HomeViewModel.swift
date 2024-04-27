@@ -78,11 +78,11 @@ final class HomeViewModel: ObservableObject {
         
         do {
             async let weather = weatherManager.getWeatherIn(
-                city: city,
+                city: city.trimmingCharacters(in: .whitespacesAndNewlines),
                 lang: LocalizationManager.preferredLanguage()
             )
             async let forecast = weatherManager.getForecastIn(
-                city: city,
+                city: city.trimmingCharacters(in: .whitespacesAndNewlines),
                 lang: LocalizationManager.preferredLanguage()
             )
             
